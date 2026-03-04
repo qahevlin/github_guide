@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Github Guide</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>ACE Team GitHub Guidebook </h1>
+      <div class="toc">
+  <h2 class="toc-title">Table of Contents</h2>
+
+  <div class="toc-section">
+    <h3>User Journey</h3>
+    <div class="toc-items">
+      <span><a href="#getting_started">1. Getting Started</a></span>
+       <span><a href="#setup_environment">2. Setup Environment</a></span>
+    <span><a href="#choose_terminal">3. Choose Your Terminal</a></span>
+    <span><a href="#choose_path">4. Choose Your Path</a></span>
+    <span><a href="#basic_git_operations">5. Basic Git Operations</a></span>
+    <span><a href="#collaboration">6. Collaboration</a></span>
+    <span><a href="#merge_strategy">7. Merge Strategy</a></span>
+    <span><a href="#advanced_skills">8. Advanced Skills</a></span>
+    <span><a href="#best_practices">9. Best Practices</a></span>
+    </div>
+  </div>
+
+  <div class="toc-section">
+    <h3>Learning Resources</h3>
+    <div class="toc-items">
+      <span><a href="#official_github_resources">Official GitHub Resources</a></span>
+    <span><a href="#interactive_learning">Interactive Learning</a></span>
+    <span><a href="#books_guides">Books & Guides</a></span>
+    <span><a href="#video_tutorials">Video Tutorials</a></span>
+    <span><a href="#practice_community">Practice & Community</a></span>
+    </div>
+  </div>
+</div>
+        
+        <div class="mindmap">
+            <!-- START -->
+            <div class="level">
+                <div class="level-title" id="getting_started">Getting Started with Your Journey</div>
+                <div class="node" data-info="start">
+                    Sign Up for GitHub
+                </div>
+            </div>
+            
+            <div class="connection"></div>
+            
+            <!-- Setup -->
+            <div class="level">
+                <div class="level-title" id="setup_environment">Setup Environment</div>
+                <div class="fork">
+                    <div class="node" data-info="install-git">Install Git</div>
+                    <div class="node" data-info="text-editor">Set Up Text Editor</div>
+                    <div class="node" data-info="config">Configure Git</div>
+                </div>
+            </div>
+            
+            <div class="connection"></div>
+          <div class="level">
+            <div class="inline-description">
+  For the steps below, you can run Git commands in <b>either</b> the built-in terminal inside Visual Studio Code
+  or the terminal provided by the Git tool you installed (Git Bash).
+
+  Editing your code (creating or updating files) and deploying it (uploading it to the cloud)
+  are separate stages — you don’t need to do both at the same time.
+
+  A common beginner workflow looks like this:<br>
+  1. Edit or create your project files in <b>Visual Studio Code</b>.<br>
+  2. When you’re ready, open <b>either Git Bash terminal</b> or run Git commands on Visual Studio Code with
+     <b>git add</b>, <b>git commit</b>, and <b>git push</b> to upload your work to GitHub.<br>
+
+  This means you can close one terminal and open the other at any time — they work independently.
+
+  You can switch between them whenever you like, depending on what feels more comfortable for you.
+
+</div>
+              <div class="node" id="choose_terminal" data-info="terminal-choice">Choose Your Terminal</div>
+          </div>
+           <div class="connection"></div>
+            
+            <!-- First Fork: Clone or Create -->
+            <div class="level">
+                <div class="level-title" id="choose_path">Choose Your Path</div>
+                <div class="fork">
+                    <div class="node" data-info="clone">
+                        Git Clone<span class="badge">Existing Repo</span>
+                    </div>
+                    <div class="node" data-info="new-repo">
+                        New Repository<span class="badge">Start Fresh</span>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div class="inline-description">Whether you're cloning an existing project or starting a new one, you’ll eventually need a repository saved under your account to continue. </br> So before moving on, please finish creating your new repository first.</br> Once your repo is ready, you can continue with the next steps.
+</div>
+            <div class="connection"></div>
+            <!-- Basic Git -->
+            <div class="level">
+                <div class="level-title" id="basic_git_operations">Basic Git Operations</div>
+               <div class="inline-description">After you finish creating the repository, editing your code, and working on your project, it’s time to update the latest version on GitHub. To do that, you’ll need to commit your changes and push the code to the cloud. You can also create another branch (e.g., dev) to temporarily store your work in progress before merging it into the main branch later.</div>
+                <div class="fork">
+                  <div class="node" data-info="branching">Create Branch (Optional)</div>
+                  <div class="node" data-info="commit">Make Changes & Commit</div>
+                  <div class="node" data-info="push">Push Changes</div>          
+                  <div class="node" data-info="status">Check Status</div>
+                </div>
+            </div>
+            
+            <div class="connection"></div>
+            
+            <!-- Collaboration -->
+            <div class="level">
+                <div class="level-title" id="collaboration">Collaboration</div>
+              <div class="connection"></div>
+              <div class="fork">
+              <div class="node" data-info="collaborators">Add a collaborator</div>
+              </div>
+              <div class="inline-description">
+                <p><strong>Prerequisite:</strong> Before creating a pull request, you need to have created and worked on another branch (e.g., <code>dev</code>) and pushed your changes to GitHub. A PR is used when you want to merge that branch into the <code>main</code> (production) branch, and you need approval first.
+  </p>
+                 Git collaboration happens through <strong>pull requests (PRs)</strong>, which let you propose merging your code into another branch while teammates review it, leave comments, suggest fixes, and approve changes before merging. Local commands like <code>git status</code> help you track progress up to committing, but they don’t confirm whether code is pushed to the cloud. Commits, branches, PRs, and code reviews work together to support clear and safe teamwork in Git.
+              </div>
+              <div class="fork">
+              
+                    <div class="node" data-info="pull-request">Create Pull Request (Reviewee)</div>
+                    <div class="node" data-info="review">Code Review (Reviewer)</div>
+                </div>
+            </div>
+            
+            <div class="connection"></div>
+            
+            <!-- Merge Decision -->
+            <div class="level">
+                <div class="level-title" id="merge_strategy">Merge Strategy</div>
+            <div class="inline-description">
+  <strong>Conflicts:</strong> Someone else has pushed changes to the same branch or the main branch after your last pull. Because the code you pulled doesn't align with the changes pushed by someone, there is a mismatch. Then, when you try to merge or pull, Git will see different changes in the same part of a file and ask you to resolve conflicts.<br>You cannot commit when there are unresolved conflicts. First, resolve the conflicts in your files, stage the changes, and then commit to ensure the main branch stays correct and functional.<br>
+  <strong>Example:</strong> If Alice changes line 10 and Bob also changes line 10 before pulling Alice’s update, Git will mark a conflict. You must then choose which change to keep.
+</div>
+                <div class="fork">
+                    <div class="node" data-info="merge">Merge PR</div>
+                    <div class="node" data-info="conflict">Resolve Conflicts</div>
+                </div>
+            </div>
+            
+            <div class="connection"></div>
+            
+            <!-- Advanced Topics -->
+            <div class="level">
+                <div class="level-title" id="advanced_skills">Advanced Skills</div>
+                <div class="fork">
+                    <div class="node" data-info="issues">GitHub Issues</div>
+                    <div class="node" data-info="rebase">Git Rebase</div>
+                    <div class="node" data-info="reset">Git Reset</div>
+                    <div class="node" data-info="bisect">Git Bisect</div>
+                </div>
+            </div>
+            
+            <div class="connection"></div>
+            
+            <!-- Best Practices -->
+            <div class="level">
+                <div class="level-title" id="best_practices">Best Practices</div>
+                <div class="fork">
+                    <div class="node" data-info="protected">Protected Branches</div>
+                    <div class="node" data-info="codeowners">CODEOWNERS</div>
+                    <div class="node" data-info="workflow">Team Workflow</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="info-panel" id="infoPanel">
+            <h3 id="infoTitle">Select a Node</h3>
+            <p id="infoContent">Click on any node to see more details about that step in your GitHub journey.</p>
+        </div>
+
+    <!-- Help Section -->
+        <div class="help-section">
+          <h2>Need More Help?</h2>
+          <p>
+            If you have any questions, feel free to book a one-on-one appointment through our booking page.<br>
+            If there are more than four people requesting a workshop, feel free to fill out the ACE on Demand form.
+          </p>
+          <div class="help-buttons">
+            <a href="https://qahighereducation.com/the-ace-team/bookings/" class="help-btn primary" target="_blank">📅 Book a 1-on-1 Appointment</a>
+            <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=lwcinDfD-EmwhqmiSXn3KCG1Mp-wwMBLlXEYKfoRiItUMVNQVzlPMFFHMVI2NEJVREE2TEVEOUxHSy4u" class="help-btn secondary" target="_blank">📋 ACE on Demand Form</a>
+          </div>
+        </div>
+
+    <!-- Resources Section -->
+    <div class="resources-section">
+      <h2 class="resources-title"> Learning Resources</h2>
+      
+      <div class="resource-category">
+        <h3 class="category-title" id="official_github_resources">Official GitHub Resources</h3>
+        <div class="resource-grid">
+          <a href="https://github.com" class="resource-btn" target="_blank">GitHub</a>
+          <a href="https://docs.github.com" class="resource-btn" target="_blank">GitHub Documentation</a>
+          <a href="https://skills.github.com" class="resource-btn" target="_blank">GitHub Skills</a>
+          <a href="https://www.youtube.com/@GitHub" class="resource-btn" target="_blank">GitHub Official YouTube</a>
+        </div>
+      </div>
+
+      <div class="resource-category">
+        <h3 class="category-title" id="interactive_learning">Interactive Learning</h3>
+        <div class="resource-grid">
+          <a href="https://learngitbranching.js.org" class="resource-btn" target="_blank">Learn Git Branching</a>
+          <a href="https://try.github.io" class="resource-btn" target="_blank">Try Git</a>
+          <a href="https://www.freecodecamp.org/news/git-and-github-for-beginners/" class="resource-btn" target="_blank">FreeCodeCamp Git Guide</a>
+          <a href="https://lab.github.com" class="resource-btn" target="_blank">GitHub Learning Lab</a>
+        </div>
+      </div>
+
+      <div class="resource-category">
+        <h3 class="category-title" id="books_guides">Books & Guides</h3>
+        <div class="resource-grid">
+          <a href="https://git-scm.com/book/en/v2" class="resource-btn" target="_blank">Pro Git Book (Free)</a>
+          <a href="https://www.atlassian.com/git/tutorials" class="resource-btn" target="_blank">Atlassian Git Tutorials</a>
+          <a href="https://education.github.com/git-cheat-sheet-education.pdf" class="resource-btn" target="_blank">Git Cheat Sheet</a>
+          <a href="https://ohshitgit.com" class="resource-btn" target="_blank">Oh Shit, Git!?</a>
+        </div>
+      </div>
+
+      <div class="resource-category">
+        <h3 class="category-title" id="video_tutorials">Video Tutorials</h3>
+        <div class="resource-grid">
+          <a href="https://www.youtube.com/watch?v=RGOj5yH7evk" class="resource-btn" target="_blank">Git & GitHub Crash Course</a>
+          <a href="https://www.youtube.com/watch?v=SWYqp7iY_Tc" class="resource-btn" target="_blank">Git for Beginners</a>
+          <a href="https://www.coursera.org/learn/introduction-git-github" class="resource-btn" target="_blank">Coursera: Version Control</a>
+          <a href="https://www.udemy.com/topic/git/" class="resource-btn" target="_blank">Udemy Git Courses</a>
+        </div>
+      </div>
+
+      <div class="resource-category">
+        <h3 class="category-title" id="practice_community">Practice & Community</h3>
+        <div class="resource-grid">
+          <a href="https://stackoverflow.com/questions/tagged/git" class="resource-btn" target="_blank">Stack Overflow - Git</a>
+          <a href="https://github.com/explore" class="resource-btn" target="_blank">Explore GitHub Projects</a>
+          <a href="https://www.reddit.com/r/git/" class="resource-btn" target="_blank">Reddit - r/git</a>
+          <a href="https://github.com/firstcontributions/first-contributions" class="resource-btn" target="_blank">First Contributions</a>
+        </div>
+      </div>
+    </div>
+  <footer>
+  <p>
+    &copy; 2026 QAHE Ltd ACE Team. All rights reserved.
+  </p>
+</footer>
+  <script src="script.js"></script>
+  </body>
+</html>
