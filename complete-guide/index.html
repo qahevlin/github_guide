@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Complete GitHub Command Guide</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Complete GitHub Command Guide</h1>
+    <p class="inline-description">From account setup to advanced workflows, this page lists exact commands for each scenario. Designed for beginners through experts, all commands are copy-paste ready for terminal use.</p>
+
+    <div class="mindmap">
+      <h2 id="preflight">1. Preflight Setup</h2>
+      <div class="inline-description">
+        <strong>Install Git and configure your identity:</strong>
+        <br><code>sudo apt update && sudo apt install git -y</code> (Linux) or install via downloaded package on Windows/macOS.
+        <br><code>git --version</code>
+        <br><code>git config --global user.name "Your Name"</code>
+        <br><code>git config --global user.email "you@example.com"</code>
+        <br><code>git config --global core.editor "code --wait"</code> (use VS Code)
+        <br><code>git config --global push.default simple</code>
+        <br><code>git config --global credential.helper cache</code>
+      </div>
+
+      <h2 id="create-repo">2. Create or Clone a Repository</h2>
+      <div class="inline-description">
+        <strong>A. New repo flow:</strong>
+        <br><code>mkdir my-project && cd my-project</code>
+        <br><code>git init</code>
+        <br><code>echo "# My Project" > README.md</code>
+        <br><code>git add README.md</code>
+        <br><code>git commit -m "chore: initial commit"</code>
+        <br><code>git branch -M main</code>
+        <br><code>git remote add origin git@github.com:USER/REPO.git</code>
+        <br><code>git push -u origin main</code>
+
+        <strong>B. Existing repo flow:</strong>
+        <br><code>git clone git@github.com:USER/REPO.git</code>
+        <br><code>cd REPO</code>
+        <br><code>git remote -v</code>
+      </div>
+
+      <h2 id="daily-workflow">3. Daily Development Workflow</h2>
+      <div class="inline-description">
+        <strong>A. Branching and coding:</strong>
+        <br><code>git checkout -b feature/your-feature</code>
+        <br><code>git status</code>
+        <br><code>git add file1 file2</code> or <code>git add .</code>
+        <br><code>git commit -m "feat: add ..."</code>
+        <br><code>git push -u origin feature/your-feature</code>
+
+        <strong>B. Sync with remote:</strong>
+        <br><code>git checkout main</code>
+        <br><code>git fetch origin</code>
+        <br><code>git pull origin main --rebase</code>
+        <br><code>git checkout feature/your-feature</code>
+        <br><code>git rebase main</code> (or <code>git merge main</code>)
+        <br>If conflict, edit files, then <code>git add .</code> and <code>git rebase --continue</code>
+      </div>
+
+      <h2 id="collaboration">4. Collaboration and PR Workflow</h2>
+      <div class="inline-description">
+        <strong>A. Push branch and open PR:</strong>
+        <br><code>git push --set-upstream origin feature/your-feature</code>
+        <br>Then create PR at GitHub with matching branch and description.
+
+        <strong>B. Update a branch after review comments:</strong>
+        <br><code>git checkout feature/your-feature</code>
+        <br>Make code changes, then <code>git add .</code>, <code>git commit --amend --no-edit</code> or <code>git commit -m "fix: ..."</code>.
+        <br><code>git push --force-with-lease</code>
+
+        <strong>C. Merge PR through GitHub UI or CLI:</strong>
+        <br><code>gh pr merge <PR_NUMBER> --merge</code> (requires GitHub CLI)
+        <br><code>gh pr merge <PR_NUMBER> --squash</code>
+        <br><code>gh pr merge <PR_NUMBER> --rebase</code>
+      </div>
+
+      <h2 id="conflicts">5. Merge Conflicts</h2>
+      <div class="inline-description">
+        <strong>Detect:</strong> <code>git status</code>
+        <br><strong>Resolve:</strong> edit files manually, then <code>git add path/to/file</code>
+        <br><code>git rebase --continue</code> or <code>git merge --continue</code>
+        <br><code>git rebase --abort</code> / <code>git merge --abort</code> to fallback
+      </div>
+
+      <h2 id="reset-rebase">6. Recovery & History Management</h2>
+      <div class="inline-description">
+        <strong>Undo local edit before staging:</strong> <code>git restore <file></code>
+        <strong>Undo staged file:</strong> <code>git restore --staged <file></code>
+        <strong>Undo last commit (keep changes):</strong> <code>git reset --soft HEAD~1</code>
+        <strong>Discard last commit:</strong> <code>git reset --hard HEAD~1</code>
+        <strong>Drop unreferenced commits:</strong> <code>git reflog</code>, <code>git checkout HEAD@{2}</code>
+      </div>
+
+      <h2 id="advanced">7. Advanced Scenarios</h2>
+      <div class="inline-description">
+        <strong>Interactive staging:</strong> <code>git add -p</code>
+        <strong>Stash work:</strong> <code>git stash push -m "WIP"</code>, <code>git stash list</code>, <code>git stash pop</code>
+        <strong>Cherry-pick commit:</strong> <code>git cherry-pick <commit-hash></code>
+        <strong>Bisect errors:</strong> <code>git bisect start</code> / <code>git bisect bad</code> / <code>git bisect good <hash></code>
+
+        <strong>Squash commits:</strong> <code>git rebase -i HEAD~N</code>, then <code>squash</code> in editor.
+      </div>
+
+      <h2 id="git-tag-release">8. Tagging and Release</h2>
+      <div class="inline-description">
+        <strong>Tag version:</strong> <code>git tag -a v1.0.0 -m "Release v1.0.0"</code>
+        <br><code>git push origin v1.0.0</code>
+        <br><code>git push origin --tags</code>
+      </div>
+
+      <h2 id="repos-remote">9. Remotes and Forks</h2>
+      <div class="inline-description">
+        <code>git remote -v</code>
+        <br><code>git remote add upstream git@github.com:ORIGINAL/REPO.git</code>
+        <br><code>git fetch upstream</code>
+        <br><code>git checkout main</code>
+        <br><code>git merge upstream/main</code>
+        <br><code>git push origin main</code>
+      </div>
+
+      <h2 id="github-cli">10. GitHub CLI Quick Calls</h2>
+      <div class="inline-description">
+        <code>gh auth login</code>
+        <br><code>gh repo clone USER/REPO</code>
+        <br><code>gh issue list --label bug</code>
+        <br><code>gh pr create --fill --base main --head feature/your-feature</code>
+        <br><code>gh pr checkout <PR_NUMBER></code>
+        <br><code>gh pr review <PR_NUMBER> --approve</code>
+      </div>
+
+      <footer>
+        <p>&copy; 2026 QAHE Ltd ACE Team. All rights reserved.</p>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>
